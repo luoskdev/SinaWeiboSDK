@@ -202,6 +202,7 @@
 
 - (void)logOut
 {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     [self loggingOutCompleteBlock:^{
         
         

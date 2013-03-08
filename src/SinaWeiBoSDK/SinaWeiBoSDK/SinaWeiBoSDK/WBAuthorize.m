@@ -1,4 +1,4 @@
-//
+ //
 //  WBAuthorize.m
 //  SinaWeiBoSDK
 //  Based on OAuth 2.0
@@ -55,7 +55,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"auth release");
     [appKey release], appKey = nil;
     [appSecret release], appSecret = nil;
     
@@ -201,6 +200,7 @@
 
 - (void)startAuthorize
 {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:appKey, @"client_id",
                                                                       @"code", @"response_type",
                                                                       redirectURI, @"redirect_uri", 
@@ -212,9 +212,8 @@
     AuthViewController *auth = [[AuthViewController alloc] init] ;
     [auth setDelegate:self];
     auth.url = [NSURL URLWithString:urlString];
-    //NRLog(@"%@",urlString);
     [rootViewController presentModalViewController:auth animated:YES];
-    //[auth release];
+    [auth release];
 }
 
 - (void)startAuthorizeUsingUserID:(NSString *)userID password:(NSString *)password

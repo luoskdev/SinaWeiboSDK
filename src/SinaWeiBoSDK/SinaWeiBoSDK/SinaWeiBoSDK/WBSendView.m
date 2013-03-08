@@ -77,7 +77,8 @@ static BOOL WBIsDeviceIPad()
         
         // add the panel view
         panelView = [[UIView alloc] initWithFrame:CGRectMake(16, 73, 288, 200)];
-        panelView.backgroundColor = COLOR_BLUE;
+        //laihj test  panelView.backgroundColor = COLOR_BLUE;
+        panelView.backgroundColor = [UIColor blueColor];
         panelView.layer.cornerRadius = 6;
         panelView.layer.masksToBounds = YES;
         [self addSubview:panelView];
@@ -120,7 +121,9 @@ static BOOL WBIsDeviceIPad()
         [contentTextView setText:text];
         contentTextView.layer.cornerRadius = 6;
         contentTextView.layer.masksToBounds = YES;
-        contentTextView.backgroundColor = COLOR_BLACK;
+        //laihj test
+        //contentTextView.backgroundColor = COLOR_BLACK;
+        contentTextView.backgroundColor = [UIColor blackColor];
 		[contentTextView setFont:[UIFont systemFontOfSize:16]];
         contentTextView.textColor = [UIColor whiteColor];
  		[panelView addSubview:contentTextView];

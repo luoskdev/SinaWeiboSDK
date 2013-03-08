@@ -80,7 +80,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     NSURLRequest *request =[NSURLRequest requestWithURL:url
-                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                         timeoutInterval:60.0];
     //NSURLRequest *request = [NSURLRequest requestWithURL:url ];
     [webView loadRequest:request];

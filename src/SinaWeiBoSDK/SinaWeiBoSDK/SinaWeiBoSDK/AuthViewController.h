@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WBAuthorizeWebView.h"
+#import "NRUnRotateViewController.h"
 
-@interface AuthViewController : UIViewController <UIWebViewDelegate>{
+@interface AuthViewController : NRUnRotateViewController <UIWebViewDelegate>{
     UIActivityIndicatorView *indicatorView;
 	UIWebView *webView;
     NSURL *url;
